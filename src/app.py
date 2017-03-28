@@ -21,7 +21,7 @@ define("memcached_host", default=MEMCACHE_HOST, help="run on the given port")
 
 base_dir = os.path.dirname(os.path.abspath(__file__))
 
-class Hello(tornado.web.RequestHandler):
+class HelloHandler(tornado.web.RequestHandler):
     def get(self):
         self.write('Hello PyGlb')
 

@@ -16,9 +16,9 @@ Recursos
     docker > https://docs.docker.com/installation/mac/
 
     $ docker-machine --version
-    docker-machine version 0.2.0 (8b9eaf2)
+    docker-machine version 0.10.0, build 76ed2a6
     $ docker-compose --version
-    docker-compose 1.2.0
+    docker-compose 1.11.2
 
 ##Clonando um projeto de exemplo
     mkdir tmp && cd tmp && git clone https://github.com/tgonzales/pyglb

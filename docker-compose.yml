@@ -1,9 +1,16 @@
 version: '2'
 services:
   mongo:
-    image: mongodb
+    image: sameersbn/mongodb:latest
     ports:
       - "27017:27017"
+    volumes:
+    - /data/dbdocker:/var/lib/mongodb
+    restart: always
+    tmpfs:
+    - /tmp
+    - /run
+    - /mnt/sda1/var/lib/docker/tmp/
 
   memcached:
     image: memcached
@@ -12,7 +19,6 @@ services:
 
   pyglb:
     build: ./src
-    dockerfile: Dockerfile
     ports:
       - "8001:8001"
     links:
