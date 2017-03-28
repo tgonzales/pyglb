@@ -1,0 +1,21 @@
+version: '2'
+services:
+  mongo:
+    image: mongodb
+    ports:
+      - "27017:27017"
+
+  memcached:
+    image: memcached
+    ports:
+      - "11211:11211"
+
+  pyglb:
+    build: ./src
+    dockerfile: Dockerfile
+    ports:
+      - "8001:8001"
+    links:
+      - mongo:mongo
+      - memcached:memcached
+    command: python app.py --port=8001
